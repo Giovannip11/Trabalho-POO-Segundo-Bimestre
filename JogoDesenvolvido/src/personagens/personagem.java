@@ -14,6 +14,9 @@ public abstract class personagem {
         InOut.MsgDeAviso("Desenho", "Desenhando");
         
     }
+    public void correr(){
+        InOut.MsgDeAviso("Ação", "Correndo...");
+    }
     
     public String falar(){
           InOut.MsgDeAviso("Frase","Frase genérica WoooW" );

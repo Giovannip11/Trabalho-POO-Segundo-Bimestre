@@ -1,23 +1,20 @@
 
 package personagens;
 
-import armas.Arma_IF;
 
 
-public abstract class voadores{
+
+public abstract class voadores extends personagem{
     
-    Arma_IF arma;
+    
     
     public void voar(){
         
     }
+    public void som(){
+        
+    }
     
-     public void arma(){
-        arma.usarArma();
-    }
 
-    public void setArma(Arma_IF arma) {
-        this.arma = arma;
-    }
      
 }

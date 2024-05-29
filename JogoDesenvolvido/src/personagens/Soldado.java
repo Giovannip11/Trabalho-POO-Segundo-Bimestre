@@ -8,4 +8,9 @@ public class Soldado extends personagem {
     public void desenhar(){
         super.desenhar();
     }
+    @Override
+    public void arma(){
+        
+       
+    }
 }
