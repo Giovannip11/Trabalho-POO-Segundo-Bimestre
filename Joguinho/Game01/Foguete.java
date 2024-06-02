@@ -8,18 +8,50 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Foguete extends Actor
 {
-    /**
-     * Act - do whatever the Foguete wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private  int cd=0;
+    public Foguete(){
+        setRotation(275);
+    }
+    
     public void act()
     {
+        checkHitByTiroAbelha();
     
-        if(Greenfoot.isKeyDown("right")){
-           move(2); 
+        if(Greenfoot.isKeyDown("up")){
+           move(4); 
         }
-        if(Greenfoot.isKeyDown("left")){
-            move(-2);
+        if(Greenfoot.isKeyDown("down")){
+            move(-4);
         }
+        if(Greenfoot.isKeyDown("f")){
+            fire();
+        }
+        if(cd >0){
+            cd--;
+        }
+
+
+
+    }
+    public void fire(){
+        if(cd==0){
+            tiro Tiro = new tiro();
+                 int tiroX = getX(); 
+        int tiroY = getY() - getImage().getHeight() / 2; 
+            getWorld().addObject(Tiro, tiroX, tiroY);
+            
+            cd=20;
+            
+            
+        }
+        
+    }
+    public void checkHitByTiroAbelha(){
+        tiroAbelha tiro =(tiroAbelha)getOneIntersectingObject(tiroAbelha.class);
+        if(tiro !=null){
+            getWorld().removeObject(this);
+            Greenfoot.setWorld(new GameOverScreen());
+        }
+        
     }
 }
