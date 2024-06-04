@@ -2,6 +2,7 @@
 package personagens;
 
 import armas.Arma_IF;
+import armas.Magia;
 
 public abstract class personagem {
       
@@ -14,8 +15,9 @@ public abstract class personagem {
         InOut.MsgDeAviso("Desenho", "Desenhando");
         
     }
-    public void correr(){
-        InOut.MsgDeAviso("Ação", "Correndo...");
+    public boolean correr(){
+        InOut.MsgDeAviso("Ação", "Tentando correr...");
+        return Math.random() < 0.5;
     }
     
     public String falar(){
@@ -32,10 +34,14 @@ public abstract class personagem {
     }
 
     public void setArma(Arma_IF arma) {
+       if (arma instanceof Magia && !(this instanceof Mago)) {
+            InOut.MsgDeAviso("Erro","Apenas um Mago pode usar Magia!");
+        }
         this.arma = arma;
+    }
     }
     
     
     
     
-}
+
