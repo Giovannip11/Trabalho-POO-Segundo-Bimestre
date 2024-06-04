@@ -13,16 +13,16 @@ public class tiroAbelha extends Actor
     
     public tiroAbelha(abelha owner) {
         this.owner = owner;
-        getImage().scale(10, 5);  
+        getImage().scale(12, 8);  
     }
    
     
     public void act() {
-        moveRight();
+        moveAbelha();
         checkEdge();
     }
     
-    public void moveRight() {
+    public void moveAbelha() {
         setLocation(getX() + speed, getY());
     }
     

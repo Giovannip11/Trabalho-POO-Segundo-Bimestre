@@ -113,6 +113,9 @@ public class Espaco extends MyWorld
         removeObject(abelha6);
         abelha2.setLocation(129,402);
         abelha12.setLocation(46,561);
+        foguete.setLocation(767,391);
+        foguete.setLocation(741,382);
+        foguete.setLocation(720,378);
     }
 
     public void atores(){

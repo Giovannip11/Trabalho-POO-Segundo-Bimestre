@@ -16,7 +16,7 @@ public class GameOverScreen extends MyWorld
 
         GreenfootImage background = new GreenfootImage(800, 600);
         background.setColor(Color.BLACK);
-        background.drawString("Fim de Jogo", 350, 300);
+        background.drawString("Fim de Jogo, Voce perdeu!!!", 350, 300);
         setBackground(background);
     }
 }

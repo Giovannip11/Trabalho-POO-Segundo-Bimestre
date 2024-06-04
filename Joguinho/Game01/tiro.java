@@ -1,16 +1,11 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
-/**
- * Write a description of class tiro here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class tiro extends Actor
 {    
     private boolean hit = false;
     public tiro(){
-        getImage().scale(10, 20);
+        getImage().scale(12, 8);
             
     }
     public void act()
@@ -30,6 +25,7 @@ public class tiro extends Actor
            Abelha.hit();
           hit = true;
           setImage(new GreenfootImage(1,1));
+          getWorld().removeObject(Abelha);
             
         }
     }

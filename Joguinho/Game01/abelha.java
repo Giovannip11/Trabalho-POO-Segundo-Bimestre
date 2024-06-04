@@ -10,9 +10,9 @@ public class abelha extends Actor
     {
 
   private boolean isHit = false;
-    private int speed = Greenfoot.getRandomNumber(2) == 0 ? 1 : -1; // Velocidade de movimento da abelha
-    private int fireRate = 100; // Frequência de disparo da abelha
-    private int fireDelay = 0; // Contador para controlar o intervalo de disparo
+    private int speed = Greenfoot.getRandomNumber(2) == 0 ? 1 : -1; 
+    private int fireRate = 100; 
+    private int fireDelay = 0; 
     
     public abelha(){
         getImage().scale(40, 40);
@@ -34,16 +34,16 @@ public class abelha extends Actor
     
     public void checkEdge() {
         if (getY() >= getWorld().getHeight() - 1) {
-            speed = -1; // Inverte a direção quando atinge a borda inferior
+            speed = -1; 
         } else if (getY() <= 0) {
-            speed = 1; // Inverte a direção quando atinge a borda superior
+            speed = 1;
         }
     }
     
     public void checkFire() {
         if (fireDelay <= 0 && getWorld() != null) {
-            if (getImage().getTransparency() > 0) { // Verifica se a abelha não está transparente
-                tiroAbelha tiro = new tiroAbelha(this); // Passando a referência da abelha ao tiro
+            if (getImage().getTransparency() > 0) { 
+                tiroAbelha tiro = new tiroAbelha(this); 
                 getWorld().addObject(tiro, getX(), getY());
                 fireDelay = fireRate;
             }
@@ -55,6 +55,8 @@ public class abelha extends Actor
     public void hit() {
         isHit = true;
         getImage().setTransparency(0);
+        removeTouching(abelha.class);
+        
     }
     
     public boolean isHit() {

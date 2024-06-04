@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
 /**
  * Write a description of class MyWorld here.
@@ -15,17 +15,25 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        
         super(800, 800, 1); 
         
         
     }
     public void act(){
         checkWithCondition();
+        checkFoguete();
     }
     private void checkWithCondition(){
         if(getObjects(abelha.class).isEmpty()){
             Greenfoot.setWorld(new VictoryScreen());
         }
+        
     }
+    private void checkFoguete(){
+        if(getObjects(Foguete.class).isEmpty()){
+           Greenfoot.setWorld(new GameOverScreen()); 
+        }
+    }
+    
 }
