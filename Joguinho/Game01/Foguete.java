@@ -46,12 +46,14 @@ public class Foguete extends Actor
         }
         
     }
-    public void checkHitByTiroAbelha(){
-        tiroAbelha tiro =(tiroAbelha)getOneIntersectingObject(tiroAbelha.class);
-        if(tiro !=null){
+     public void checkHitByTiroAbelha() {
+        tiroAbelha tiro = (tiroAbelha) getOneIntersectingObject(tiroAbelha.class);
+        if (tiro != null) {
             getWorld().removeObject(this);
-            Greenfoot.setWorld(new GameOverScreen());
         }
-        
+    }
+
+    public void hit() {
+        getWorld().removeObject(this);
     }
 }
